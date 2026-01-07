@@ -1,9 +1,8 @@
 // src/routes/task.routes.ts
 import { Router } from "express";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../config/db.js";
 
 const router = Router();
-const prisma = new PrismaClient();
 
 router.get("/", async (_, res) => {
     const tasks = await prisma.task.findMany();
