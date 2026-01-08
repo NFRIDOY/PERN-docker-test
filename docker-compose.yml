@@ -18,6 +18,8 @@ services:
     container_name: taskflow-backend
     env_file:
       - ./backend/.env
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
     ports:
       - "5000:5000"
     depends_on:
